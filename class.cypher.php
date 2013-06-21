@@ -40,11 +40,7 @@
 		public function decrypt($encrypted){
 			return rtrim(mcrypt_decrypt(MCRYPT_RIJNDAEL_256, md5($this->key), base64_decode($encrypted), MCRYPT_MODE_CBC, md5(md5($this->key))), "\0");
 		}
-	
-	
-		public function sanitize($str){
-			return filter_var($str, FILTER_SANITIZE_STRING);
-		}
+
 	
 	}
 
